@@ -23,3 +23,13 @@ Python scripts for automating enterprise networking tasks.
 - Reduce manual operations
 - Improve operational efficiency
 - Learn network automation
+
+## Project Structure
+
+docs/          → Technical documentation
+configs/       → Sample configurations
+scripts/       → Automation scripts
+templates/     → Configuration templates
+images/        → Network diagrams
+README.md      → Project overview
+LICENSE        → License information
