@@ -33,3 +33,15 @@ templates/     → Configuration templates
 images/        → Network diagrams
 README.md      → Project overview
 LICENSE        → License information
+
+## BGP Neighbor Health Check
+
+### Features
+
+- Connects to multiple Cisco routers
+- Retrieves BGP neighbor information
+- Checks neighbor state
+- Identifies Idle and Active neighbors
+- Displays prefixes received
+- Collects neighbor uptime
+- Generates CSV health reports
