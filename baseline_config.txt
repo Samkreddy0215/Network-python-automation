@@ -1,0 +1,12 @@
+hostname Router1
+
+interface GigabitEthernet0/0
+ description WAN Link
+ ip address 10.1.1.1 255.255.255.0
+ no shutdown
+
+router ospf 10
+ network 10.1.1.0 0.0.0.255 area 0
+
+router bgp 65001
+ neighbor 192.168.1.2 remote-as 65002
