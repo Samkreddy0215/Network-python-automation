@@ -45,3 +45,15 @@ LICENSE        → License information
 - Displays prefixes received
 - Collects neighbor uptime
 - Generates CSV health reports
+
+- ## Configuration Drift Checker
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves running configuration
+- Compares against a baseline configuration
+- Detects missing configuration lines
+- Detects extra configuration lines
+- Detects modified configuration
+- Generates detailed drift reports
