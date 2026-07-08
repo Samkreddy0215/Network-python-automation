@@ -57,3 +57,14 @@ LICENSE        → License information
 - Detects extra configuration lines
 - Detects modified configuration
 - Generates detailed drift reports
+
+- ## OSPF Neighbor Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves OSPF neighbor information
+- Detects neighbors not in FULL state
+- Collects dead timer information
+- Generates CSV health reports
+- Displays neighbor health summary
