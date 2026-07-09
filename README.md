@@ -68,3 +68,13 @@ LICENSE        → License information
 - Collects dead timer information
 - Generates CSV health reports
 - Displays neighbor health summary
+
+- ## Interface Error Monitor
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves interface operational status
+- Identifies interfaces that are up or down
+- Generates CSV interface health reports
+- Displays a health summary
