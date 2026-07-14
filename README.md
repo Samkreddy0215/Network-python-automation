@@ -78,3 +78,13 @@ LICENSE        → License information
 - Identifies interfaces that are up or down
 - Generates CSV interface health reports
 - Displays a health summary
+
+## Automation Workflow
+
+1. Load Device Inventory
+2. Validate Reachability
+3. Establish Secure SSH Sessions
+4. Execute Operational Commands
+5. Parse and Validate Output
+6. Generate Reports
+7. Archive Results and Logs
