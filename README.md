@@ -162,3 +162,14 @@ LICENSE        → License information
 - Detects abnormal HSRP states
 - Generates CSV health reports
 - Displays HSRP health summary
+
+## VRRP Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves VRRP group information
+- Identifies Master and Backup routers
+- Detects abnormal VRRP states
+- Generates CSV health reports
+- Displays VRRP health summary
