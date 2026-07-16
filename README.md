@@ -98,3 +98,13 @@ LICENSE        → License information
 - Collects VLAN ID, Name, and Status
 - Generates CSV audit reports
 - Supports enterprise VLAN auditing
+
+## MAC Address Table Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves MAC address table entries
+- Collects VLAN, MAC address, type, and interface
+- Generates CSV audit reports
+- Displays MAC address summary
