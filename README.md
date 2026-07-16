@@ -88,3 +88,13 @@ LICENSE        → License information
 5. Parse and Validate Output
 6. Generate Reports
 7. Archive Results and Logs
+
+## VLAN Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves VLAN information
+- Collects VLAN ID, Name, and Status
+- Generates CSV audit reports
+- Supports enterprise VLAN auditing
