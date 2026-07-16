@@ -108,3 +108,14 @@ LICENSE        → License information
 - Collects VLAN, MAC address, type, and interface
 - Generates CSV audit reports
 - Displays MAC address summary
+
+## CDP Neighbor Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves CDP neighbor details
+- Collects neighbor hostname
+- Collects neighbor management IP
+- Displays local and remote interfaces
+- Generates CSV audit reports
