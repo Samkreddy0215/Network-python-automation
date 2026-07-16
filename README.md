@@ -119,3 +119,13 @@ LICENSE        → License information
 - Collects neighbor management IP
 - Displays local and remote interfaces
 - Generates CSV audit reports
+
+## ARP Table Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves ARP table entries
+- Collects IP address, MAC address, interface, and entry type
+- Generates CSV audit reports
+- Displays ARP table summary
