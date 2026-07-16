@@ -1,0 +1,87 @@
+from netmiko import ConnectHandler
+import csv
+
+# Device Inventory
+devices = [
+    {
+        "device_type": "cisco_ios",
+        "host": "10.1.1.1",
+        "username": "admin",
+        "password": "password"
+    }
+]
+
+total_groups = 0
+healthy_groups = 0
+issue_groups = 0
+
+with open("hsrp_health_report.csv", "w", newline="") as csvfile:
+
+    writer = csv.writer(csvfile)
+
+    writer.writerow([
+        "Device",
+        "Interface",
+        "Group",
+        "State",
+        "Virtual IP",
+        "Active Router",
+        "Standby Router"
+    ])
+
+    for device in devices:
+
+        print(f"Connecting to {device['host']}...")
+
+        try:
+
+            connection = ConnectHandler(**device)
+
+            output = connection.send_command(
+                "show standby brief"
+            )
+
+            connection.disconnect()
+
+            lines = output.splitlines()
+
+            for line in lines:
+
+                columns = line.split()
+
+                if len(columns) >= 6 and columns[0].startswith("Vlan"):
+
+                    total_groups += 1
+
+                    interface = columns[0]
+                    group = columns[1]
+                    state = columns[2]
+                    virtual_ip = columns[3]
+                    active_router = columns[4]
+                    standby_router = columns[5]
+
+                    if state in ["Active", "Standby"]:
+                        healthy_groups += 1
+                    else:
+                        issue_groups += 1
+
+                    writer.writerow([
+                        device["host"],
+                        interface,
+                        group,
+                        state,
+                        virtual_ip,
+                        active_router,
+                        standby_router
+                    ])
+
+        except Exception as error:
+
+            print(f"Connection Failed: {error}")
+
+print("----------------------------------------")
+print(f"Total HSRP Groups : {total_groups}")
+print(f"Healthy Groups    : {healthy_groups}")
+print(f"Issues Found      : {issue_groups}")
+print("----------------------------------------")
+print("Report Saved : hsrp_health_report.csv")
