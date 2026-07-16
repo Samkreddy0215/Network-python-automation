@@ -151,3 +151,14 @@ LICENSE        → License information
 - Lists member interfaces
 - Generates CSV health reports
 - Displays Port-Channel health summary
+
+## HSRP Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves HSRP group information
+- Identifies Active and Standby routers
+- Detects abnormal HSRP states
+- Generates CSV health reports
+- Displays HSRP health summary
