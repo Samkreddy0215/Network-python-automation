@@ -140,3 +140,14 @@ LICENSE        → License information
 - Collects platform/system description
 - Displays local and remote interfaces
 - Exports results to CSV
+
+## Port-Channel Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves EtherChannel summary information
+- Identifies Port-Channel status
+- Lists member interfaces
+- Generates CSV health reports
+- Displays Port-Channel health summary
