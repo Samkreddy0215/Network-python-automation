@@ -129,3 +129,14 @@ LICENSE        → License information
 - Collects IP address, MAC address, interface, and entry type
 - Generates CSV audit reports
 - Displays ARP table summary
+
+## LLDP Neighbor Audit
+
+### Features
+
+- Connects to Cisco and Arista devices using Netmiko
+- Retrieves LLDP neighbor details
+- Collects management IP information
+- Collects platform/system description
+- Displays local and remote interfaces
+- Exports results to CSV
