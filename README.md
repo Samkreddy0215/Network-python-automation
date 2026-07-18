@@ -173,3 +173,13 @@ LICENSE        → License information
 - Detects abnormal VRRP states
 - Generates CSV health reports
 - Displays VRRP health summary
+
+## Interface Utilization Monitor
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Collects interface input and output utilization
+- Detects high-utilization interfaces
+- Generates CSV utilization reports
+- Displays interface utilization summary
