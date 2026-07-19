@@ -183,3 +183,14 @@ LICENSE        → License information
 - Detects high-utilization interfaces
 - Generates CSV utilization reports
 - Displays interface utilization summary
+
+## CPU and Memory Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Monitors CPU utilization
+- Monitors memory utilization
+- Identifies devices exceeding utilization thresholds
+- Generates CSV health reports
+- Displays CPU and memory health summary
