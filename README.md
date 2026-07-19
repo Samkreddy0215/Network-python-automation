@@ -194,3 +194,14 @@ LICENSE        → License information
 - Identifies devices exceeding utilization thresholds
 - Generates CSV health reports
 - Displays CPU and memory health summary
+
+## NTP Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves NTP association details
+- Verifies synchronization status
+- Collects NTP server, reachability, and stratum information
+- Generates CSV health reports
+- Displays NTP synchronization summary
