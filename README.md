@@ -205,3 +205,13 @@ LICENSE        → License information
 - Collects NTP server, reachability, and stratum information
 - Generates CSV health reports
 - Displays NTP synchronization summary
+
+## DNS Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Verifies DNS server reachability
+- Detects DNS connectivity issues
+- Generates CSV health reports
+- Displays DNS health summary
