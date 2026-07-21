@@ -215,3 +215,14 @@ LICENSE        → License information
 - Detects DNS connectivity issues
 - Generates CSV health reports
 - Displays DNS health summary
+
+## DHCP Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves DHCP binding information
+- Counts active DHCP leases
+- Detects devices with no active DHCP bindings
+- Generates CSV health reports
+- Displays DHCP health summary
