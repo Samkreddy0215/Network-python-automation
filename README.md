@@ -226,3 +226,13 @@ LICENSE        → License information
 - Detects devices with no active DHCP bindings
 - Generates CSV health reports
 - Displays DHCP health summary
+
+## Routing Table Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves routing table information
+- Counts Connected, Static, OSPF, BGP, and EIGRP routes
+- Generates CSV routing reports
+- Displays routing table audit summary
