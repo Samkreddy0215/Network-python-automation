@@ -236,3 +236,13 @@ LICENSE        → License information
 - Counts Connected, Static, OSPF, BGP, and EIGRP routes
 - Generates CSV routing reports
 - Displays routing table audit summary
+
+## BGP Route Validator
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves BGP routing table entries
+- Collects network prefix, next hop, metric, local preference, and AS path
+- Generates CSV route validation reports
+- Displays BGP route summary
