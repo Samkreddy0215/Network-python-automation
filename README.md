@@ -246,3 +246,13 @@ LICENSE        → License information
 - Collects network prefix, next hop, metric, local preference, and AS path
 - Generates CSV route validation reports
 - Displays BGP route summary
+
+## Interface Inventory
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves interface inventory information
+- Collects interface name, IP address, status, and protocol
+- Generates CSV inventory reports
+- Displays interface inventory summary
