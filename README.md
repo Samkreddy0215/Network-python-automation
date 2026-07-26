@@ -256,3 +256,12 @@ LICENSE        → License information
 - Collects interface name, IP address, status, and protocol
 - Generates CSV inventory reports
 - Displays interface inventory summary
+
+## Device Version Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves hostname, model, IOS version, serial number, and uptime
+- Generates CSV inventory reports
+- Simplifies device inventory and lifecycle tracking
