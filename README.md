@@ -265,3 +265,14 @@ LICENSE        → License information
 - Retrieves hostname, model, IOS version, serial number, and uptime
 - Generates CSV inventory reports
 - Simplifies device inventory and lifecycle tracking
+
+## Environment Health Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Checks temperature status
+- Checks power supply status
+- Checks fan status
+- Generates CSV environment health reports
+- Displays overall device health summary
