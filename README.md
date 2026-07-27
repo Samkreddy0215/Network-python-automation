@@ -276,3 +276,13 @@ LICENSE        → License information
 - Checks fan status
 - Generates CSV environment health reports
 - Displays overall device health summary
+
+## Interface Description Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Audits interface descriptions
+- Identifies interfaces missing descriptions
+- Generates CSV audit reports
+- Displays interface documentation summary
