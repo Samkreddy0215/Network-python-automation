@@ -286,3 +286,13 @@ LICENSE        → License information
 - Identifies interfaces missing descriptions
 - Generates CSV audit reports
 - Displays interface documentation summary
+
+## Configuration Backup
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves the running configuration
+- Saves timestamped backup files
+- Creates a backup directory automatically
+- Simplifies configuration backup and recovery
