@@ -296,3 +296,13 @@ LICENSE        → License information
 - Saves timestamped backup files
 - Creates a backup directory automatically
 - Simplifies configuration backup and recovery
+
+## Startup vs Running Configuration Comparison
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Retrieves startup and running configurations
+- Detects unsaved configuration changes
+- Generates configuration difference reports
+- Supports configuration validation before maintenance windows
