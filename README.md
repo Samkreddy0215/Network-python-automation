@@ -306,3 +306,13 @@ LICENSE        → License information
 - Detects unsaved configuration changes
 - Generates configuration difference reports
 - Supports configuration validation before maintenance windows
+
+## Unused Interface Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Audits interface administrative and protocol status
+- Identifies unused interfaces
+- Generates CSV audit reports
+- Helps with cleanup and lifecycle management
