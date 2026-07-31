@@ -317,3 +317,12 @@ LICENSE        → License information
 - Generates CSV audit reports
 - Helps with cleanup and lifecycle management
 
+## VLAN Consistency Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Validates VLAN IDs and names
+- Detects missing or mismatched VLANs
+- Generates CSV validation reports
+- Supports network standardization and migration projects
