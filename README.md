@@ -326,3 +326,14 @@ LICENSE        → License information
 - Detects missing or mismatched VLANs
 - Generates CSV validation reports
 - Supports network standardization and migration projects
+
+## Access Port Compliance Check
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Audits switch access ports
+- Validates access VLAN assignments
+- Validates voice VLAN assignments
+- Generates CSV compliance reports
+- Helps enforce enterprise switch standards
