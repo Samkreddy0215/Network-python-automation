@@ -337,3 +337,13 @@ LICENSE        → License information
 - Validates voice VLAN assignments
 - Generates CSV compliance reports
 - Helps enforce enterprise switch standards
+
+## EtherChannel Validation
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Validates EtherChannel operational status
+- Identifies LACP/PAgP port-channel information
+- Detects failed member links
+- Generates CSV validation reports
