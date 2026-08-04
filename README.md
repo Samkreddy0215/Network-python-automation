@@ -347,3 +347,13 @@ LICENSE        → License information
 - Identifies LACP/PAgP port-channel information
 - Detects failed member links
 - Generates CSV validation reports
+
+## STP Root Bridge Validator
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Identifies the STP root bridge for each VLAN
+- Validates the elected root bridge against the expected value
+- Detects unexpected root bridge changes
+- Generates CSV validation reports
