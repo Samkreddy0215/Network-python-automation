@@ -368,3 +368,14 @@ LICENSE        → License information
 - Verifies violation modes
 - Generates CSV compliance reports
 - Helps enforce Layer 2 security standards
+
+## DHCP Snooping Validator
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Validates DHCP Snooping status
+- Checks configured VLANs
+- Reports trusted interfaces
+- Generates CSV compliance reports
+- Supports Layer 2 security audits
