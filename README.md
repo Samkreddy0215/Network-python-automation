@@ -357,3 +357,14 @@ LICENSE        → License information
 - Validates the elected root bridge against the expected value
 - Detects unexpected root bridge changes
 - Generates CSV validation reports
+
+## Switchport Security Audit
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Audits switchport security configuration
+- Validates maximum MAC address settings
+- Verifies violation modes
+- Generates CSV compliance reports
+- Helps enforce Layer 2 security standards
