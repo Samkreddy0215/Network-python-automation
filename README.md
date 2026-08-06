@@ -379,3 +379,14 @@ LICENSE        → License information
 - Reports trusted interfaces
 - Generates CSV compliance reports
 - Supports Layer 2 security audits
+
+## Dynamic ARP Inspection Validator
+
+### Features
+
+- Connects to Cisco devices using Netmiko
+- Validates Dynamic ARP Inspection status
+- Checks protected VLANs
+- Reports trusted interfaces
+- Generates CSV compliance reports
+- Supports enterprise Layer 2 security validation
