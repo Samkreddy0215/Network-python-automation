@@ -390,3 +390,27 @@ LICENSE        → License information
 - Reports trusted interfaces
 - Generates CSV compliance reports
 - Supports enterprise Layer 2 security validation
+
+## BPDU Guard Audit
+
+Automates Layer 2 access-port security validation on Cisco switches.
+
+### Features
+
+- Connects to Cisco IOS/IOS-XE devices using Netmiko
+- Discovers switch interfaces
+- Identifies access ports
+- Validates Spanning Tree PortFast
+- Validates BPDU Guard
+- Flags non-compliant interfaces
+- Generates CSV audit reports
+- Supports enterprise Layer 2 security assessments
+
+### Output
+
+The script generates:
+
+`bpdu_guard_audit_report.csv`
+
+The report provides device, interface, switchport mode,
+PortFast status, BPDU Guard status, and compliance results.
