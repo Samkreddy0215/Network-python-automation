@@ -414,3 +414,48 @@ The script generates:
 
 The report provides device, interface, switchport mode,
 PortFast status, BPDU Guard status, and compliance results.
+
+## Enterprise Network Health Dashboard
+
+Transforms network health audit results into an HTML
+operations dashboard.
+
+### Architecture
+
+Cisco Infrastructure
+→ Python/Netmiko Health Audit
+→ CSV Health Report
+→ Python Dashboard Generator
+→ HTML Operations Dashboard
+
+### Dashboard Features
+
+- Total monitored devices
+- Healthy device count
+- Warning device count
+- Failed device count
+- CPU utilization
+- Memory utilization
+- Interface health
+- BGP neighbor health
+- OSPF neighbor health
+- HSRP redundancy health
+- Per-device overall health
+
+### Input
+
+`enterprise_network_health_report.csv`
+
+### Output
+
+`enterprise_network_health_dashboard.html`
+
+### Enterprise Use Cases
+
+- NOC health reporting
+- Daily infrastructure validation
+- Pre-change health checks
+- Post-change verification
+- Network migration validation
+- Incident investigation
+- Operations reporting
