@@ -1,0 +1,362 @@
+import csv
+from datetime import datetime
+from html import escape
+
+INPUT_FILE = "enterprise_network_health_report.csv"
+OUTPUT_FILE = "enterprise_network_health_dashboard.html"
+
+
+def load_report():
+    """Load health-audit results from CSV."""
+
+    records = []
+
+    try:
+        with open(
+            INPUT_FILE,
+            "r",
+            encoding="utf-8",
+        ) as csvfile:
+
+            reader = csv.DictReader(csvfile)
+
+            for row in reader:
+                records.append(row)
+
+    except FileNotFoundError:
+        print(
+            f"ERROR: {INPUT_FILE} was not found."
+        )
+
+        print(
+            "Run enterprise-network-health-audit.py first."
+        )
+
+    return records
+
+
+def count_status(records, status):
+    """Count devices matching an overall health state."""
+
+    return sum(
+        1
+        for record in records
+        if record.get(
+            "Overall Health",
+            "",
+        ).upper() == status
+    )
+
+
+def safe_value(record, key):
+    """Return escaped HTML-safe report data."""
+
+    return escape(
+        str(
+            record.get(
+                key,
+                "N/A",
+            )
+        )
+    )
+
+
+def status_class(status):
+    """Return CSS class for health status."""
+
+    status = status.upper()
+
+    if status == "HEALTHY":
+        return "healthy"
+
+    if status == "WARNING":
+        return "warning"
+
+    return "failed"
+
+
+def build_table(records):
+    """Generate the per-device HTML health table."""
+
+    rows = []
+
+    for record in records:
+
+        health = record.get(
+            "Overall Health",
+            "UNKNOWN",
+        )
+
+        css_class = status_class(
+            health
+        )
+
+        row = f"""
+        <tr>
+            <td>{safe_value(record, "Device")}</td>
+            <td>{safe_value(record, "CPU %")}</td>
+            <td>{safe_value(record, "Memory %")}</td>
+            <td>{safe_value(record, "Interface Issues")}</td>
+            <td>{safe_value(record, "BGP")}</td>
+            <td>{safe_value(record, "OSPF")}</td>
+            <td>{safe_value(record, "HSRP")}</td>
+            <td class="{css_class}">
+                {escape(health)}
+            </td>
+        </tr>
+        """
+
+        rows.append(row)
+
+    return "\n".join(rows)
+
+
+def build_dashboard(records):
+    """Generate the complete HTML dashboard."""
+
+    total_devices = len(records)
+
+    healthy_devices = count_status(
+        records,
+        "HEALTHY",
+    )
+
+    warning_devices = count_status(
+        records,
+        "WARNING",
+    )
+
+    failed_devices = total_devices - (
+        healthy_devices + warning_devices
+    )
+
+    generated_time = datetime.now().strftime(
+        "%Y-%m-%d %H:%M:%S"
+    )
+
+    table_rows = build_table(
+        records
+    )
+
+    html = f"""<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Enterprise Network Health Dashboard
+</title>
+
+<style>
+
+body {{
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background: #f4f6f8;
+}}
+
+h1 {{
+    text-align: center;
+}}
+
+.subtitle {{
+    text-align: center;
+    margin-bottom: 30px;
+}}
+
+.summary {{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}}
+
+.card {{
+    background: white;
+    padding: 20px;
+    min-width: 180px;
+    flex: 1;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px
+        rgba(0, 0, 0, 0.1);
+}}
+
+.card h2 {{
+    margin-top: 0;
+}}
+
+table {{
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}}
+
+th,
+td {{
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}}
+
+th {{
+    background: #e9ecef;
+}}
+
+.healthy {{
+    font-weight: bold;
+    color: green;
+}}
+
+.warning {{
+    font-weight: bold;
+    color: darkorange;
+}}
+
+.failed {{
+    font-weight: bold;
+    color: red;
+}}
+
+.footer {{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+}}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>
+Enterprise Network Health Dashboard
+</h1>
+
+<div class="subtitle">
+Generated: {generated_time}
+</div>
+
+<div class="summary">
+
+    <div class="card">
+        <h2>Total Devices</h2>
+        <strong>{total_devices}</strong>
+    </div>
+
+    <div class="card">
+        <h2>Healthy</h2>
+        <strong>{healthy_devices}</strong>
+    </div>
+
+    <div class="card">
+        <h2>Warnings</h2>
+        <strong>{warning_devices}</strong>
+    </div>
+
+    <div class="card">
+        <h2>Failed</h2>
+        <strong>{failed_devices}</strong>
+    </div>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+    <th>Device</th>
+    <th>CPU %</th>
+    <th>Memory %</th>
+    <th>Interface Issues</th>
+    <th>BGP</th>
+    <th>OSPF</th>
+    <th>HSRP</th>
+    <th>Overall Health</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+{table_rows}
+
+</tbody>
+
+</table>
+
+<div class="footer">
+
+Generated by Python Network Automation
+
+</div>
+
+</body>
+
+</html>
+"""
+
+    return html
+
+
+def main():
+
+    print(
+        "Loading enterprise network health report..."
+    )
+
+    records = load_report()
+
+    if not records:
+
+        print(
+            "No health records were available."
+        )
+
+        return
+
+    print(
+        f"Loaded {len(records)} device records."
+    )
+
+    dashboard = build_dashboard(
+        records
+    )
+
+    with open(
+        OUTPUT_FILE,
+        "w",
+        encoding="utf-8",
+    ) as htmlfile:
+
+        htmlfile.write(
+            dashboard
+        )
+
+    print(
+        "----------------------------------------"
+    )
+
+    print(
+        "Enterprise Network Health Dashboard"
+    )
+
+    print(
+        "----------------------------------------"
+    )
+
+    print(
+        f"Dashboard Saved: {OUTPUT_FILE}"
+    )
+
+
+if __name__ == "__main__":
+    main()
