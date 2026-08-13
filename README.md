@@ -459,3 +459,54 @@ Cisco Infrastructure
 - Network migration validation
 - Incident investigation
 - Operations reporting
+
+## Pre/Post Network Change Validation
+
+Automates operational-state collection before and after
+enterprise network maintenance.
+
+### Validation Areas
+
+- Interface operational state
+- BGP neighbors
+- OSPF neighbors
+- HSRP redundancy
+- EtherChannel status
+- Routing state
+- CPU utilization
+- Memory utilization
+
+### Workflow
+
+Production Network
+→ Pre-Change Snapshot
+→ Maintenance Activity
+→ Post-Change Snapshot
+→ Automated Comparison
+→ Validation Report
+
+### Usage
+
+Capture pre-change state:
+
+`python pre-post-change-validation.py pre`
+
+Capture post-change state:
+
+`python pre-post-change-validation.py post`
+
+### Outputs
+
+- `pre_change_snapshot.json`
+- `post_change_snapshot.json`
+- `change_validation_report.txt`
+
+### Use Cases
+
+- Network maintenance windows
+- Router and switch upgrades
+- Network migrations
+- Routing changes
+- Hardware replacements
+- Change-control validation
+- Rollback decision support
